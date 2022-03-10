@@ -1,0 +1,47 @@
+Hello Lilly,
+
+Thank you so much for reaching me out.
+
+I have prepared an architecture diagram that illustrates how you can leverage more AWS services to improve your application's current performance, help you for future growth also improving your deployment process.
+
+The solution is based around Elastic Beanstalk, which brings together HTTP load balancing, application servers and database servers under one roof. After setting up these services using Elastic Beanstalk, they can be scaled independently. Eg., We can increase the resources available to the database server without affecting the app server, vice-versa.
+
+Please find a system architecture diagram attached to this email. I will explain these parts in detail and why they were chosen.
+
+Route 53 Hosted Zone
+
+The DNS will be set up in AWS Route 53 (AWS's DNS Management System). This will help your DNS to tie into the load balancer and make routing changes automatically.
+
+Elastic Beanstalk
+
+The application would be deployed in Elastic Beanstalk. Simple command line tools are provided to deploy your application. You may have to make a few small changes to your code configuration for it to work on Elastic Beanstalk but we can provide guidance on that. We also consider Code Pipeline, which could assist with deployment.
+
+The Elastic Beanstalk environment is in three parts: Elastic Load Balancer, EC2 Compute Instances and an RDS Postgre SQL server.
+
+Elastic Load Balancer
+
+When Setting up Elastic Beanstalk we can also have it set up a load balancer for us. This allows traffic to be routed to different EC2 instances in one or multiple availability zones. This provides with redundancy and scaling.
+
+EC2 Auto Scaling Group
+
+The main benefit of using Elastic Beanstalk is the way it ties into EC2 to automatically scale the number of instances your application run across. We can set up rules to automatically add or remove instances as the load on your application increases. This will help if your application has peak times where the load is greater as you would only be paying for capacity when you need it.
+
+RDS PostgreSQL Server
+
+Elastic Beanstalk can automatically set up and manage the PostgreSQL database in RDS too. The benefits of running PostgreSQL on a separate server from your application have already been covered above.
+
+S3
+
+We can utilize S3 for RDS backups and backups of your files. In future we can also consider serving static files or media from S3 if your application grows to require this.
+
+Multiple Availability Zones
+
+We can set up application in multiple availability zones ( 
+
+
+(rest ans missing because i wrote directly in the website, this was just to save the half work done so far, to avoid interruptions)
+
+
+
+
+
